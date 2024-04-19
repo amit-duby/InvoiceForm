@@ -8,10 +8,7 @@ const userdb = require("./model/googleModel.js");
 const bodyParser = require("body-parser");
 const invo = require("./route/invoicRoutes.js");
 const gst = require("./route/GstRouters.js");
-// google varification
-const clientId =
-  "498259257497-9po0cb8s5e61tc7a89hr5n67gi1bojkv.apps.googleusercontent.com";
-const clientsecret = "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";
+
 // Configure env
 require("dotenv").config();
 
@@ -30,7 +27,7 @@ app.use("/api/v1/gs", gst);
 // Google Auth middleware
 app.use(
   session({
-    secret: "253545ghjhiukllkuuytttrg44hykkk",
+    secret: process.env.GOOGLESECRET_KEY,
     resave: false,
     saveUninitialized: true,
   })
@@ -44,8 +41,8 @@ app.use(passport.session());
 passport.use(
   new OAuth2Strategy(
     {
-      clientID: clientId,
-      clientSecret: clientsecret,
+      clientID: process.env.GOOGLECLIENT_ID,
+      clientSecret: process.env.GOOGLECLIENT_SECRET,
       callbackURL: "/auth/google/callback",
       scope: ["profile", "email"],
     },

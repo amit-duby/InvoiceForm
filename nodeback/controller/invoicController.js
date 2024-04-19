@@ -4,9 +4,9 @@ const AppError = require("../utill/apperror.js");
 const cloudinary = require("cloudinary");
 
 cloudinary.config({
-  cloud_name: "dvxceod63",
-  api_key: "836317862267872",
-  api_secret: "mgPsLSLqIvtxpjDFobkGiRuStsk",
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
 });
 
 exports.createInvoice = async (req, res, next) => {
