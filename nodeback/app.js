@@ -9,18 +9,16 @@ const bodyParser = require("body-parser");
 const invo = require("./route/invoicRoutes.js");
 const gst = require("./route/GstRouters.js");
 // google varification
-
 const clientId =
   "498259257497-9po0cb8s5e61tc7a89hr5n67gi1bojkv.apps.googleusercontent.com";
 const clientsecret = "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";
-const cors = require("cors");
-
 // Configure env
 require("dotenv").config();
 
 // Connect to MongoDB
 connectDB();
 
+const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // route config
 app.use("/api/v1", invo);
 app.use("/api/v1/gs", gst);
+
 // Google Auth middleware
 app.use(
   session({
