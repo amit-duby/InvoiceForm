@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const connectDB = () => {
   mongoose.set("strictQuery", true);
   const conne = mongoose
-    .connect("mongodb://localhost:27017/Form", {
+    .connect(process.env.MONGODB_URL, {
       // useNewUrlParser: true,
       // useUnifiedTopology: true,
       // useCreateIndex: true,
