@@ -1,9 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import Navbar from "../../pages/Navbar";
+import Navbar from "../Navbar";
 function Layout({ children, title, description, keywords, author }) {
   return (
-    <div className="div">
+    <div className="div w-full">
       <Helmet>
         <meta charSet="UTF-8" />
         <meta name="description" content={description} />
@@ -12,7 +12,7 @@ function Layout({ children, title, description, keywords, author }) {
         <title>{title}</title>
       </Helmet>
       <Navbar />
-      {children}
+      <main> {children}</main>
     </div>
   );
 }

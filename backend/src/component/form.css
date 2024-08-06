@@ -13,7 +13,18 @@
     border: none;
     overflow:visible;
     border-bottom: 2px dotted black;
-    width: 4em;
+    width: 8em;
+    /* font-weight: 800; */
+   font-family: 'Arial';
+    text-align: center;
+ }
+ .transportheading{
+    background: transparent;
+    outline:none;
+    border: none;
+    overflow:visible;
+    border-bottom: 2px dotted black;
+    width: 9em;
     /* font-weight: 800; */
    font-family: 'Arial';
     text-align: center;
@@ -25,7 +36,7 @@
   border: none;
   overflow:visible;
   border-bottom: 2px dotted rgb(147, 147, 147);
-  width: 6em;
+  width:100px;
     margin: 5px;
    margin-right: 10px;
    font-family: Arial, Helvetica, sans-serif;
@@ -47,7 +58,9 @@
 
 .inviFor{
     box-sizing: border-box;
-    height: 160em;
+     
+        /* margin-Left: "14em"; */
+        /* border-color: blue;  */
     border: 2px solid rgb(228, 228, 228);
     box-shadow: 4px 4px 4px 4px rgb(238, 236, 236);
   /* --webkit-box-shadow: 0 8px 6px -6px gray; */
@@ -84,14 +97,18 @@ border: 1px dotted black;
  } 
 
 .Bill{
-    display:flex;
+    /* display:flex; */
     justify-content: space-between;
     justify-content: center;
     margin-left: 15px;
     /* background-color:#f8fafc; */
      width: 30vw;
-    height: 90vh; 
-    border-radius: 8px;
+    height: 80vh; 
+    box-shadow: 1px 1px 1px 1px rgb(238, 236, 236);
+    margin-top: 2em;
+    box-sizing: border-box;
+    border: 2px solid rgb(228, 228, 228) ;
+    /* border-radius: 8px; */
 
 }
 .billff{
@@ -140,7 +157,7 @@ border: 1px dotted black;
     justify-content: space-around;
 }
 .inpfil{
-    background-color: rgb(255, 255, 255) ;
+    /* background-color: rgb(255, 255, 255) ; */
     width: 95vw;
     height: 80vh;
     border: 3px;
@@ -158,8 +175,12 @@ border: 1px dotted black;
     box-sizing: border-box;
     /* justify-content: space-between; */
    /* display: flex; */
-      width: 30vw;
-    height: 73vh;
+      /* width: 30vw; */
+    /* max-height: 90em; */
+    box-shadow: 1px 1px 1px 1px rgb(238, 236, 236);
+    margin-top: 2em;
+    box-sizing: border-box;
+    border: 2px solid rgb(228, 228, 228) ;
 /* border-radius: 3px; */
     /* margin-left: px; */
     /* padding: 20px;    */
@@ -179,17 +200,34 @@ border: 1px dotted black;
 }
 .transform{
     background-color: rgb(255, 255, 255) ;
-    width: 30vw;
-    height: 85vh;
+    /* width: 30vw; */
+    height: 90vh;
     /* border: 3px; */
-    margin-left: 2em;
+    /* margin-left: 2em; */
     /* padding: 5px; */
     /* box-sizing: border-box; */
     border: 2px solid rgb(228, 228, 228)
     /* background-color: rgb(237, 237, 237); */
 }
-.transformdiv{
-    height: 98vh;
-    width: 33vw;
-    margin-left: 22px;
+/* .transformdiv{
+    height: 90vh;
+    /* width: 33vw; */
+    /* margin-left: 22px; */
+/* } */ */
+.invoic{
+    margin-left: 36em;
+}
+.advance{
+    background-color:rgb(255, 236, 236);
+    width: 42em;
+    border-radius: 2px;
+    margin-top: 1em;
+    height: 7em;
+}
+
+.newcolumn{
+    /* background-color: aliceblue;
+    color: black; */
+    margin-left: 25em;
+    border:2px solid blue;
 }

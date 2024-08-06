@@ -5,10 +5,11 @@ const session = require("express-session");
 const passport = require("passport");
 const OAuth2Strategy = require("passport-google-oauth2").Strategy;
 const userdb = require("./model/googleModel.js");
+const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const invo = require("./route/invoicRoutes.js");
-const gst = require("./route/GstRouters.js");
-
+const fileUpload = require("express-fileupload");
+const path = require("path");
 // Configure env
 require("dotenv").config();
 
@@ -16,13 +17,31 @@ require("dotenv").config();
 connectDB();
 
 const cors = require("cors");
+
 app.use(express.json());
+app.use(cookieParser());
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    // tempFileDir: "/tmp/",
+  })
+);
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(fileUpload());
+app.use(bodyParser.json({ limit: "10mb" }));
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "client/build")));
+
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+// app.get("*", (req, res) => {
+//   // res.sendFile(path.join(__dirname, "client/build", "index.html"));
+// });
 // route config
 app.use("/api/v1", invo);
-app.use("/api/v1/gs", gst);
 
 // Google Auth middleware
 app.use(

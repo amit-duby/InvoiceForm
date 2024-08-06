@@ -1,10 +1,10 @@
 const jwt = require("jsonwebtoken");
-const User = require("../models/userModel");
-const { default: AppError } = require("./apperror");
+const User = require("../model/userModel.js");
+const AppError = require("./apperror");
 
 exports.isAuthenticatedUser = async (req, res, next) => {
   const { token } = req.cookies;
-
+  console.log(token,"kkkkk");
   if (!token) {
     return next(new AppError("Please Login to access this resource", 401));
   }

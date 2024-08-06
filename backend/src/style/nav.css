@@ -2,4 +2,11 @@
     margin: 0;
     padding: 0;
 }
-
+@media screen and (max-width: 900px) and (min-width: 300px) {
+    .nav {
+     margin-left: 50em;
+      padding: 50px;
+      /* border: 8px solid black; */
+      background: yellow;
+    }
+  }

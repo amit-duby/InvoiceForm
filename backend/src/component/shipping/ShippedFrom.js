@@ -126,37 +126,23 @@ function ShippedFrom() {
   };
   // <<<<<<<<<<<<<<<<<<<<< END Country value>>>>>>>>>>>>>>>>>>>>>>>
   return (
-    <div className=" mt-20 ">
-      <div className="row ship ">
-        <div className="col-sm-5 shipping bg-slate-50 ">
-          {/* <<<<<<<<<<<<<<<>>>>>>>>>>>>>>> */}
-          <div
-            style={{
-              fontSize: "20px",
-            }}
-          >
+    <div className="mt-20">
+      <div className="row ship">
+        <div className="col-sm-5   shipping bg-slate-50">
+          <div style={{ fontSize: "20px" }}>
             <input
-              className="  heading "
+              className="heading"
               type="text"
               defaultValue="Shipped Form"
-              style={{
-                width: "7em",
-                margin: "15px",
-              }}
+              style={{ width: "7em", margin: "15px" }}
             />
           </div>
-          {/* <<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>> */}
-          <form
-            onSubmit={handleShipped}
-            className="fillship p-3 "
-            // style={{ height: "70vh", width: "30vw" }}
-          >
+          <form className="fillship p-3">
             <div className="form-check">
               <input
-                className="form-check-input "
+                className="form-check-input"
                 style={{ width: "20px", height: "20px", color: "indigo" }}
                 type="checkbox"
-                // defaultValue
                 id="flexCheckDefault"
               />
               <label className="form-check-label" htmlFor="flexCheckDefault">
@@ -167,23 +153,24 @@ function ShippedFrom() {
             <div className="inpcont">
               <input
                 type="text"
-                className=" inptS "
-                // defaultValue="email@example.com"
+                className="inptS w-full"
                 placeholder="Business/Freelancer Name"
                 style={{
-                  width: "95%",
+                  width: "100%",
+                  maxWidth: "20em",
                   marginRight: "100px",
                   marginTop: "10px",
                 }}
               />
               <div className="select">
                 <select
-                  className=" inptS"
+                  className="inptS w-full md:w-auto"
                   value={selectedCountry}
                   onChange={handleCountryChange}
                   style={{
-                    width: "95%",
                     marginRight: "100px",
+                    width: "100%",
+                    maxWidth: "20em",
                     marginTop: "10px",
                     fontStyle: "normal",
                   }}
@@ -191,7 +178,7 @@ function ShippedFrom() {
                   <option>Select Country</option>
                   {countries.map((country, index) => (
                     <option
-                      style={{ margin: "5px" }}
+                      style={{ margin: "5px", width: "100%", maxWidth: "20em" }}
                       key={index}
                       value={country}
                     >
@@ -203,42 +190,32 @@ function ShippedFrom() {
               <div>
                 <input
                   type="text"
-                  className=" inptS "
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                  // defaultValue="email@example.com"
+                  className="inptS w-full md:w-auto"
                   placeholder="Address(optional)"
                   style={{
-                    width: "95%",
+                    width: "100%",
+                    maxWidth: "20em",
                     marginRight: "100px",
                     marginTop: "10px",
                   }}
                 />
               </div>
 
-              <div style={{ display: "flex" }}>
+              <div className="flex flex-wrap md:flex-nowrap">
                 <input
                   type="text"
-                  className=" inptS"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  // defaultValue="email@example.com"
+                  className="inptS w-full md:w-auto"
                   placeholder="City(optional)"
-                  style={{
-                    width: "70%",
-                    // marginRight: "100px",
-                    marginTop: "10px",
-                  }}
+                  style={{ width: "100%", maxWidth: "20em", marginTop: "10px" }}
                 />
                 <div>
                   <input
                     type="text"
-                    value={postal}
-                    onChange={(e) => setPostal(e.target.value)}
                     placeholder="Postal Code/Zip"
-                    className="inptS"
+                    className="inptS "
                     style={{
-                      width: "90%",
+                      width: "100%",
+                      maxWidth: "30em",
                       marginRight: "50px",
                       marginTop: "10px",
                     }}
@@ -248,13 +225,11 @@ function ShippedFrom() {
               <div>
                 <input
                   type="text"
-                  value={state}
-                  onChange={(e) => setState(e.target.value)}
-                  className=" inptS "
-                  // defaultValue="email@example.com"
+                  className="inptS w-full md:w-auto"
                   placeholder="State(optional)"
                   style={{
-                    width: "95%",
+                    width: "100%",
+                    maxWidth: "20em",
                     marginRight: "100px",
                     marginTop: "10px",
                   }}
@@ -263,8 +238,9 @@ function ShippedFrom() {
             </div>
           </form>
         </div>
+
         {/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< here shiipped To form >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
-        <div className="col-5 shipping bg-slate-50">
+        <div className="col-md-5 shipping bg-slate-50">
           <div
             style={{
               fontSize: "20px",
@@ -443,7 +419,6 @@ function ShippedFrom() {
           {/*<<<<<<<<<<<<<<<<<<< mnnj>>>>>>>>>>>>>>>>> */}
 
           <form
-            onSubmit={handleShipped}
             className="p-3 px-3 py-3  fillship "
             // style={{ height: "70vh", width: "30vw" }}
           >
@@ -474,8 +449,6 @@ function ShippedFrom() {
               <div className="select">
                 <select
                   className=" inptS"
-                  value={selecteCountry}
-                  onChange={handleCountry}
                   style={{
                     width: "95%",
                     marginRight: "100px",
@@ -500,8 +473,7 @@ function ShippedFrom() {
                   type="text"
                   className=" inptS "
                   // defaultValue="email@example.com"
-                  value={clAddress}
-                  onChange={(e) => setclAddress(e.target.value)}
+
                   placeholder="Address(optional)"
                   style={{
                     width: "95%",
@@ -516,8 +488,7 @@ function ShippedFrom() {
                   type="text"
                   className=" inptS"
                   // defaultValue="email@example.com"
-                  value={clCity}
-                  onChange={(e) => setClCity(e.target.value)}
+
                   placeholder="City(optional)"
                   style={{
                     width: "70%",
@@ -527,8 +498,6 @@ function ShippedFrom() {
                 <div>
                   <input
                     type="text"
-                    value={clPostalZip}
-                    onChange={(e) => setClPostalZip(e.target.value)}
                     placeholder="Postal Code/Zip"
                     className="inptS"
                     style={{
@@ -543,8 +512,7 @@ function ShippedFrom() {
                   type="text"
                   className=" inptS "
                   // defaultValue="email@example.com"
-                  value={clState}
-                  onChange={(e) => setClState(e.target.value)}
+
                   placeholder="State(optional)"
                   style={{
                     width: "95%",
@@ -587,7 +555,10 @@ function ShippedFrom() {
 
       {/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< TransPort Detail >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
 
-      <div className="bg-slate-50 transformdiv">
+      <div
+        className="bg-slate-50 lg:ml-10 sm:ml-5 transformdiv"
+        style={{ width: "100%", maxWidth: "33em" }}
+      >
         <div className="row">
           <div
             style={{
@@ -606,7 +577,10 @@ function ShippedFrom() {
             />
           </div>
 
-          <div className="col-md-6  transform ">
+          <div
+            className="col-md-6 lg:ml-10 sm:ml-10 transform "
+            style={{ width: "100%", maxWidth: "30vw" }}
+          >
             <from className="p-2 " onSubmit={handleShipped}>
               <>
                 <div className="mb-3">
@@ -641,10 +615,7 @@ function ShippedFrom() {
                       </p>
                     </div>
                   </div>
-                  {/* </div> */}
-                  {/* </div> */}
 
-                  {/*<<<<<<<>>>>>>>>>>>>>>>>> */}
                   <>
                     <div className="mb-3">
                       <label
@@ -669,7 +640,7 @@ function ShippedFrom() {
                   </>
                 </div>
               </>
-              {/* <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
+
               <div className="flex">
                 <NavLink
                   to="https://ewaybillgst.gov.in/Others/P2PDistance.aspx"
@@ -688,15 +659,11 @@ function ShippedFrom() {
                 />
               </div>
               <div>
-                {/* <p className="d-inline-flex gap-1"></p> */}
-
                 <div>
                   <div
                     className="flex mt-3"
-                    // className="btn btn-primary"
                     data-bs-toggle="collapse"
                     href="#collapseExample"
-                    // role="button"
                     aria-expanded="false"
                     aria-controls="collapseExample"
                   >
@@ -712,13 +679,7 @@ function ShippedFrom() {
                     </p>
                     Add Mode of Transport
                   </div>
-                  {/* const [transport,setTransport]=useState('')
-                const [challanNo,setChallanNo]=useState('')
-                const [challan,setChallan]=useState('')
-                const [vehicle,setVehicle]=useState("")
-                const [vehicleNo,setVehicleNo]=useState("")
-                const [vehicleType,setVehicleType]=useState("")
-                const [supply ,setSupply]=useState("") */}
+
                   <div className="collapse" id="collapseExample">
                     <div className="card ">
                       <select
@@ -737,7 +698,7 @@ function ShippedFrom() {
                   </div>
                 </div>
               </div>
-              <div style={{ display: "flex", marginTop: "15px" }}>
+              <div className="lg:flex" style={{ marginTop: "15px" }}>
                 <div className="mb-3">
                   <label htmlFor="formGroupExampleInput" className="form-label">
                     Challan Number
@@ -771,7 +732,7 @@ function ShippedFrom() {
                   />
                 </div>
               </div>
-              <div style={{ display: "flex", margin: "3px" }}>
+              <div className="lg:flex" style={{ margin: "3px" }}>
                 <div className="">
                   <p>Vehicle Type</p>
                   <select
@@ -779,7 +740,6 @@ function ShippedFrom() {
                     value={vehicle}
                     onChange={(e) => setVehicle(e.target.value)}
                     style={{ width: "12em", marginTop: "9px" }}
-                    //   aria-label="Default select example"
                   >
                     <option>Selected...</option>
                     <option value="Road">Regural</option>
@@ -807,7 +767,7 @@ function ShippedFrom() {
                   </div>
                 </>
               </div>
-              <div style={{ display: "flex", marginTop: "15px" }}>
+              <div className="lg:flex" style={{ marginTop: "15px" }}>
                 <div>
                   <p>Vehicle Type</p>
                   <select
@@ -815,7 +775,6 @@ function ShippedFrom() {
                     value={vehicleType}
                     onChange={(e) => setVehicleType(e.target.value)}
                     style={{ width: "12em", marginTop: "9px" }}
-                    //   aria-label="Default select example"
                   >
                     <option>Selected...</option>
                     <option value="Regural">Regural</option>
@@ -839,7 +798,6 @@ function ShippedFrom() {
                     }}
                     value={supply}
                     onChange={(e) => setSupply(e.target.value)}
-                    //   aria-label="Default select example"
                   >
                     <option>Selected...</option>
                     <option value="supply">Supply</option>
