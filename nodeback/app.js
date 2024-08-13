@@ -8,11 +8,23 @@ const userdb = require("./model/googleModel.js");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const invo = require("./route/invoicRoutes.js");
+const MongoStore = require('connect-mongo');
 const fileUpload = require("express-fileupload");
 const path = require("path");
 // Configure env
 require("dotenv").config();
 
+
+
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: true,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URL,
+    collectionName: 'sessions'
+  })
+}));
 // Connect to MongoDB
 connectDB();
 
@@ -130,8 +142,9 @@ app.use((error, req, res, next) => {
   }
 });
 //
-const PORT = process.env.PORT;
+const PORT = process.env.PORT
+const mode = process.env.NODE_ENV
 
 app.listen(PORT, function () {
-  console.log(`Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`);
+  console.log(`Server Running on ${mode} mode on port ${PORT}`);
 });

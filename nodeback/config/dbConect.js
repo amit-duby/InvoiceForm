@@ -4,10 +4,11 @@ const connectDB = () => {
   mongoose.set("strictQuery", true);
   const conne = mongoose
     .connect(process.env.MONGODB_URL, {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
-      // useCreateIndex: true,
-      // useNewUrlParser: true,
+  //     useNewUrlParser: true,
+  // useUnifiedTopology: true,
+  // tls: true, // Ensures that TLS is used
+  // tlsInsecure: false, // Prevents insecure connections
+  // tlsAllowInvalidCertificates: false, // Rejects invalid certificates
     })
 
     .then((data) => {

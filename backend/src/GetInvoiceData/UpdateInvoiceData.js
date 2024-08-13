@@ -3747,7 +3747,7 @@ const UpdateInvoiceData = () => {
                               className="form-control"
                               name="signatuelable"
                               value={signatuelable}
-                              onChange={(e) => setSigLabel(e.target.value)}
+                              onChange={(e) => setSignatuelable(e.target.value)}
                               style={{ width: "17em", marginLeft: "1em" }}
                               id="exampleFormControlInput1"
                               defaultValue={"Authorised Signatory"}
