@@ -27,7 +27,7 @@ const GetInvoiceFormData = () => {
 
   const fetchInvoices = async () => {
     try {
-      const response = await axios.get("/api/v1/find", {
+      const response = await axios.get("https://invoiceform-2.onrender.com/api/v1/find", {
         params: { page: activePage, size: LIMIT, order },
       });
       console.log(response, "getinvoice data");
@@ -51,7 +51,7 @@ const GetInvoiceFormData = () => {
           onClick: async () => {
             // Proceed with the delete action
             try {
-              await axios.delete(`/api/v1/delete/${id}`);
+              await axios.delete(`https://invoiceform-2.onrender.com/api/v1/delete/${id}`);
               setInvoices((prevInvoices) =>
                 prevInvoices.filter((invoice) => invoice._id !== id)
               );

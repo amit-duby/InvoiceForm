@@ -16,7 +16,7 @@ const ForgetPassword = () => {
       setMessage("Email is require");
     } else {
       try {
-        const result = await axios.post("/api/v1/password/forgot", formData);
+        const result = await axios.post("https://invoiceform-2.onrender.com/api/v1/password/forgot", formData);
         console.log("resetPassword Link successfully send", result);
 
         setMessage(result?.data?.message);

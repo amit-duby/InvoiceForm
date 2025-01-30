@@ -11,7 +11,7 @@ function GetInvoiceDataById() {
   const navigate = useNavigate();
   const fetchInvoiceData = async () => {
     try {
-      const response = await axios.get(`/api/v1/invoiceByuserId/${userId}`);
+      const response = await axios.get(`https://invoiceform-2.onrender.com/api/v1/invoiceByuserId/${userId}`);
       if (response.data.data) {
         setInvoiceData(response.data.data);
       } else {

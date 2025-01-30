@@ -960,7 +960,7 @@ const InvoiceForm = () => {
 
       try {
         setIsLoading(true);
-        const response = await axios.post("/api/v1/create", formData, {
+        const response = await axios.post("https://invoiceform-2.onrender.com/api/v1/create", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -2420,7 +2420,8 @@ const InvoiceForm = () => {
                         )}
                         {inputSets3?.map((inputSet, index) => (
                           <div key={inputSet.id}>
-                            <div className="flex">
+                            <div className="lg:flex">
+                              <div className="">
                               <input
                                 type="text"
                                 className="inptS"
@@ -2441,6 +2442,7 @@ const InvoiceForm = () => {
                                   handleChangeShipbyClick(inputSet.id, e)
                                 }
                               />
+                              </div>
                               <button
                                 className="remove-btn"
                                 onClick={() =>

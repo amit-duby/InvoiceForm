@@ -15,7 +15,7 @@ const ResetPassword = () => {
       return;
     }
     try {
-      const response = await axios.put(`/api/v1/password/reset/${token}`, {
+      const response = await axios.put(`https://invoiceform-2.onrender.com/api/v1/password/reset/${token}`, {
         password,
         confirmPassword,
       });

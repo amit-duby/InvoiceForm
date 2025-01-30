@@ -9,7 +9,7 @@ const AllUser = () => {
 
   const handleAllUser = async () => {
     try {
-      const response = await axios.get(`/api/v1/finduser`);
+      const response = await axios.get(`https://invoiceform-2.onrender.com/api/v1/finduser`);
       console.log(response.data, "user result");
       // Ensure we're setting an array to the users state
       setUsers(Array.isArray(response.data.data) ? response.data.data : []);

@@ -13,7 +13,7 @@ function GetInvoiceByUserId() {
 
   const fetchInvoices = async () => {
     try {
-      const response = await axios.get(`/api/v1/invoiceByuser/${userId}`);
+      const response = await axios.get(`https://invoiceform-2.onrender.com/api/v1/invoiceByuser/${userId}`);
       console.log(response, "getinvoice data");
       if (response?.data?.data) {
         setInvoices(response.data.data);
@@ -34,7 +34,7 @@ function GetInvoiceByUserId() {
           label: "Yes",
           onClick: async () => {
             try {
-              await axios.delete(`/api/v1/deleteInvoiceByUserId/${userId}`);
+              await axios.delete(`https://invoiceform-2.onrender.com/api/v1/deleteInvoiceByUserId/${userId}`);
               setInvoices((prevInvoices) =>
                 prevInvoices.filter((invoice) => invoice.userId !== userId)
               );

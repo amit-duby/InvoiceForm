@@ -24,7 +24,7 @@ function Login() {
         email: email,
         password: password,
       };
-      const result = await axios.post("/api/v1/login", formData);
+      const result = await axios.post("https://invoiceform-2.onrender.com/api/v1/login", formData);
       console.log(result.data, "user");
       if (result && result.data) {
         setAuth({

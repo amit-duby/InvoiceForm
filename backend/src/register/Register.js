@@ -59,7 +59,7 @@ function Register() {
           country: selectedCountry, // Include selectedCountry in the form data
         };
 
-        const result = await axios.post("/api/v1/sign", formData);
+        const result = await axios.post("https://invoiceform-2.onrender.com/api/v1/sign", formData);
         console.log(result.data);
 
         navigate("/login");

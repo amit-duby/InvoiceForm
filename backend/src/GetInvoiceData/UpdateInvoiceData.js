@@ -632,125 +632,14 @@ const UpdateInvoiceData = () => {
     setIsChecked(event.target.value);
     setIsChecked(!isChecked);
   };
-  // useEffect(() => {
-  //   const handleFetchInvoice = async () => {
-  //     try {
-  //       if (userId) {
-  //         console.log(userId);
-  //         const response = await axios.get(`/api/v1/invoiceByuserId/${userId}`);
-  //         console.log(response, "all InvoiceByUserId");
-  //         // setInvoice(response?.data?.data?.invoice);
-  //         setInvoiceDate(response?.data?.data?.invoiceDate);
-  //         setDueDate(response?.data?.data?.dueDate);
-  //         setInvoiceNo(response?.data?.data?.invoiceNo);
-  //         setPreview(response?.data?.data?.image?.url);
-  //         setBillByBusiness(response?.data?.data?.Billbybusiness);
-  //         setBillToBusiness(response?.data?.data?.Billtobusiness);
-  //         setBillByAddress(response?.data?.data?.Billbyaddress);
-  //         setBillToAddress(response?.data?.data?.Billtoaddress);
-  //         setBillByCity(response?.data?.data?.Billbycity);
-  //         setBillToCity(response?.data?.data?.Billtocity);
-  //         setBillByCountry(response?.data?.data?.Billbycountry);
-  //         setBillToCountry(response?.data?.data?.Billtocountry);
-  //         setBillByGst(response?.data?.data?.Billbygst);
-  //         setBillToGst(response?.data?.data?.Billtogst);
-  //         setBillByPhone(response?.data?.data?.Billbyphone || "");
-  //         setBillToPhone(response?.data?.data?.Billtophone || "");
-  //         setBillByPan(response?.data?.data?.Billbypan);
-  //         setBillToPan(response?.data?.data?.Billtopan);
-  //         setBillByPostal(response?.data?.data?.Billbypostal);
-  //         setBillToPostal(response?.data?.data?.Billtopostal);
-  //         setBillByRegion(response?.data?.data?.Billbyregion);
-  //         setBillToRegion(response?.data?.data?.Billtoregion);
-  //         setShippedByBusiness(response?.data?.data?.Shippedbybusiness);
-  //         setShippedToBusiness(response?.data?.data?.Shippedtobusiness);
-  //         setShippedByAddress(response?.data?.data?.Shippedbyaddress);
-  //         setShippedToAddress(response?.data?.data?.Shippedtoaddress);
-  //         setShippedByCity(response?.data?.data?.Shippedbycity);
-  //         setShippedToCity(response?.data?.data?.Shippedtocity);
-  //         setShippedbyCountry(response?.data?.data?.Shippedbycountry);
-  //         setShippedToCountry(response?.data?.data?.Shippedtocountry);
-  //         setShippedByState(response?.data?.data?.Shippedbystate);
-  //         setShippedToState(response?.data?.data?.Shippedtostate);
-  //         setShippedByPostal(response?.data?.data?.Shippedbypostal);
-  //         setShippedToPostal(response?.data?.data?.Shippedtopostal);
-  //         setEmail(response?.data?.data?.email);
-  //         setEmail1(response?.data?.data?.email1);
-  //         setAddEmail(response?.data?.data?.addemail);
-  //         setContent(response?.data?.data?.content || "");
-  //         setAddphone(response?.data?.data?.addphone || "");
-  //         setPreview2(response?.data?.data?.document.url);
-  //         setIsChecked(response?.data?.data?.addShippingDetails);
-  //         setAddTerm(response?.data?.data?.addterm);
-  //         setDescription(response?.data?.data?.description);
-  //         setDistance(response?.data?.data?.distance);
-  //         setChallanDate(response?.data?.data?.challanDate);
-  //         setChallanNumber(response?.data?.data?.challanNumber);
-  //         setModeTrasport(response?.data?.data?.modeTrasport);
-  //         setSupplyType(response?.data?.data?.supplyType);
-  //         setTransPortType(response?.data?.data?.transportType);
-  //         setVehicleNumber(response?.data?.data?.vehicleNumber);
-  //         setVehicleType(response?.data?.data?.vehicleType);
-  //         setShippedbycheckbox(response?.data?.data?.Shippedbycheckbox);
-  //         setShippedtocheckbox(response?.data?.data?.Shippedtocheckbox);
-  //         setShippedtocheckbox1(response?.data?.data?.Shippedtocheckbox1);
-  //         setSignatuelable(response?.data?.data?.signatuelable);
-  //         setSignatureImage(response?.data?.data?.signatureData);
-  //         // sigCanvas.current.fromDataURL(response?.data?.data?.signatureData);
 
-  //         // inputSets2</////////////////
-  //         const fetchedData = response?.data?.data?.inputSets2;
-
-  //         const parsedData = JSON.parse(fetchedData[0]);
-  //         setInputSets2(parsedData);
-  //         // inputSets1</////////////
-  //         const fetchedData1 = response?.data?.data?.inputSets1;
-  //         // Parse the JSON string inside the array
-  //         const parsedData1 = JSON.parse(fetchedData1[0]);
-  //         setInputSets1(parsedData1);
-  //         // inputSets3<////////////////
-  //         const fetchedData3 = response?.data?.data?.inputSets3;
-  //         // Parse the JSON string inside the array
-  //         const parsedData3 = JSON.parse(fetchedData3[0]);
-  //         setInputSets3(parsedData3);
-  //         // GstInputSets
-  //         const fetchedData4 = response?.data?.data?.gstinputSets;
-
-  //         if (fetchedData4 && fetchedData4.length > 0) {
-  //           try {
-  //             // Parse the JSON string inside the array
-  //             const parsedData4 = JSON.parse(fetchedData4[0]);
-  //             setGSTInputSets(parsedData4);
-  //           } catch (error) {
-  //             console.error("Error parsing gstinputSets data:", error);
-  //             setGSTInputSets([]); // Set to empty array in case of parsing error
-  //           }
-  //         } else {
-  //           console.warn("No gstinputSets data found");
-  //           setGSTInputSets([]); // Set to empty array if no data
-  //         }
-  //         // addinputSets<////////////////
-  //         const fetchedAddInputSets = response?.data?.data?.addinputSets;
-
-  //         const parsedAddInputSets = JSON.parse(fetchedAddInputSets[0]);
-  //         console.log(parsedAddInputSets, "jdjj");
-  //         setAddInputSets(parsedAddInputSets);
-  //       }
-  //     } catch (error) {
-  //       console.log("Invoice id does not find", error);
-  //     }
-  //   };
-  //   handleFetchInvoice();
-  // }, [userId]);
-
-  // ????????????????????????
   useEffect(() => {
     const handleFetchInvoice = async () => {
       if (!userId) return;
 
       try {
         console.log(userId);
-        const response = await axios.get(`/api/v1/invoiceByuserId/${userId}`);
+        const response = await axios.get(`https://invoiceform-2.onrender.com/api/v1/invoiceByuserId/${userId}`);
         console.log(response, "all InvoiceByUserId");
 
         const { data } = response.data;
@@ -961,7 +850,7 @@ const UpdateInvoiceData = () => {
       // formData.append("document", document);
 
       const response = await axios.put(
-        `/api/v1/updateByUserId/${userId}`,
+        `https://invoiceform-2.onrender.com/api/v1/updateByUserId/${userId}`,
         formData,
         {
           headers: {
